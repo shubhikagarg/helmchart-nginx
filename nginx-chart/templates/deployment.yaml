@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.metadata.name }}
+  namespace: {{ .Values.metadata.namespace }}
+spec:
+  selector:
+    matachLabels:
+       app: {{ .Values.spec.selector.app }}
+  replicas: {{ .Values.spec.replicas }}
+  template:
+     metadata:
+       labels:
+          app: {{ .Values.spec.selector.app }}
+     spec:
+       containers:    
+       - name: {{ .Values.spec.containers.name }}
+         image: "{{ .Values.spec.image.name }} : {{ .Values.spec.image.tag }}"
+         imagePullPolicy: Always  
+

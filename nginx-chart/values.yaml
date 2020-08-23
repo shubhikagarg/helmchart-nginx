@@ -1,0 +1,19 @@
+metadata:
+    name: my-nginx
+    namespace: nginx-helmchart
+    labels:
+      app:my- nginx
+spec:   
+  image:
+    name: nginx
+    tag: latest
+  replicas: 
+  selector:
+    app: my-nginx
+  containers:   
+    name: my-nginx
+service:
+   type: NodePort
+   port: 80   
+
+
