@@ -1,0 +1,19 @@
+metadata:
+    name:  nginx-demo
+    namespace: nginx-helmchart
+    labels:
+        app: nginx-demo
+spec:        
+  replicaCount: 1
+  image:
+   repository: nginx
+   tag: stable
+   pullPolicy: IfNotPresent
+  selector:
+    app: nginx-demo 
+  containers:
+    name: nginx-demo      
+service:
+  type: NodePort
+  port: 80
+
