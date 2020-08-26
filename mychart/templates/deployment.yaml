@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.metadata.namespace }}
  
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.spec.replicaCount }}
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ .Values.spec.selector.app }}
